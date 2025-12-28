@@ -2,6 +2,30 @@
 {
     public class Templates
     {
+        public Templates()
+        {
+            CreateTemplates();
+        }
+
+        private Dictionary<string, string>? TemplatesPadrao {  get; set; }
+
+        private void CreateTemplates()
+        {
+            TemplatesPadrao = new()
+            {
+                {APLICACAO,Aplicacao()},
+                {DOMINIO,Dominio()},
+                {INFRAESTRUTURA,Infraestrutura()},
+                {APRESENTACAO,ApresentacaoUif()}
+
+            };
+        }
+
+        public void SalvaTemplates()
+        {
+
+        }
+
         private static string Aplicacao()
         {
             return $@"<Project Sdk=""Microsoft.NET.Sdk"">

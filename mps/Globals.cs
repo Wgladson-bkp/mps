@@ -4,7 +4,16 @@ namespace mps
 {
     public static class Globals
     {
-        public const string CONFIG_PATH = "";
+        //ARGUMENTOS
+        public const string ARG_s = "-s";
+        public const string ARG_p = "-p";
+        public const string ARG_n = "-n";
+        public const string ARG_f = "-f";
+        public const string ARG_v = "-n";
+
+
+        //
+        public const string CONFIG_PATH = @"C:\Users\SPEED\Desktop\mps\mpsconfig.json";
         public const string VERSAO_PADRAO = "net8.0";
         public const string CAMINHO_PADRAO = @"C:\Projetos";
 
@@ -34,6 +43,9 @@ namespace mps
         public const string UIM = "uim";
         public const string WEBM = "webm";
         public const string WEBC = "webc";
+
+
+
 
     }
 }

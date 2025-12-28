@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace mps
+﻿namespace mps
 {
-    internal class Argumentos
+    public static class Argumentos
     {
+        public static Dictionary<string, List<string>> Filtro(string[] args)
+        {
+           var lista =  new Dictionary<string, List<string>>();
+            string argumento = string.Empty;
+            foreach (string arg in args)
+            {
+                if (arg.StartsWith('-'))
+                    lista[argumento = arg] = new();
+
+                else if (arg != null)
+                    lista[argumento].AddRange(arg.Split(',',StringSplitOptions.RemoveEmptyEntries));
+            }
+           return lista;
+        }
     }
 }
