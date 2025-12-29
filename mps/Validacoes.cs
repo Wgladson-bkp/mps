@@ -10,5 +10,10 @@
                 !argumentos.ContainsKey(ARG_n);
         }
 
+        public static bool ValidaQtdProjetos(List<string> projetos, List<string> nomes)
+        {
+            return projetos.Count == nomes.Count;
+        }
+
     }
 }
