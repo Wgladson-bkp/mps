@@ -16,14 +16,13 @@ namespace mps
                    Arguments = argumentos,
                    RedirectStandardError = true,
                    RedirectStandardOutput = true,
-                   UseShellExecute = true
+                   UseShellExecute = false
                }
             
             };
             processo.Start();
             Console.WriteLine(processo.StandardOutput.ReadToEnd().ToString());
             Console.WriteLine(processo.StandardError.ReadToEnd().ToString());
-            processo.
             processo.WaitForExit();
         }
     }

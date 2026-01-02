@@ -17,7 +17,7 @@ namespace mps
         public const string VERSAO_PADRAO = "net8.0";
         public const string CAMINHO_PADRAO = @"C:\Projetos";
 
-        //TEMPLATES PADROES .NET
+        //TEMPLATES PADROES .NET SUPORTADOS
         public const string CLASSLIB = "classlib";
         public const string WINFORMS = "winforms";
         public const string WPF = "wpf";

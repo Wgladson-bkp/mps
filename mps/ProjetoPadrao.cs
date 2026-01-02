@@ -2,13 +2,13 @@
 {
     public class ProjetoPadrao
     {
-        public ProjetoPadrao(string camada, string modelo)
+        public ProjetoPadrao(string tipo, string modelo)
         {
-            Camada = camada;
+            Tipo = tipo;
             Modelo = modelo;
         }
 
-        public string Camada { get; set; }
+        public string Tipo { get; set; }
         public string Modelo { get; set; }
     }
 }

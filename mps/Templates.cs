@@ -26,6 +26,33 @@
 
         }
 
+        public static Dictionary<string, ProjetoPadrao> MpsTemplates { get; set; } = new Dictionary<string, ProjetoPadrao>
+            {
+                [APP] = new(CLASSLIB, APLICACAO),
+                [CORE] = new(CLASSLIB, DOMINIO),
+                [INFRA] = new(CLASSLIB, INFRA),
+                [UIF] = new(WINFORMS, $"{APRESENTACAO}_{UIF}"),
+                [UIW] = new(WPF, $"{APRESENTACAO}_{UIW}"),
+                [UIB] = new(BLAZOR, $"{APRESENTACAO}_{UIB}"),
+                [UIM] = new(MAUI, $"{APRESENTACAO}_{UIM}"),
+                [WEBM] = new(MINIMAL_API, WEB),
+                [WEBC] = new(WEB_API, WEB)
+            };
+
+        public static string Estrutura(string tipo)
+        {
+            switch (tipo)
+            {
+                case APLICACAO:
+                    return Aplicacao();
+                case DOMINIO:
+                    return Dominio();
+                case INFRAESTRUTURA:
+                    return Infraestrutura();
+                default:
+                    return String.Empty;
+            }
+        }
         private static string Aplicacao()
         {
             return $@"<Project Sdk=""Microsoft.NET.Sdk"">
