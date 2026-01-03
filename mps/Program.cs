@@ -1,12 +1,10 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using System.Text.RegularExpressions;
 
 namespace mps
 {
     public class Program
     {
-
         private static string VersaoPadrao = string.Empty;
         private static string PastaSolution = string.Empty;
         private static string CaminhoPastaRaiz = string.Empty;
@@ -67,8 +65,6 @@ namespace mps
 
         }
 
-
-
         private static void CriaPastasProjetos(List<string> listaProjetos, List<string> listaNomes, Configuracoes config)
         {
             for (int i = 0; i < listaProjetos.Count; i++)
@@ -90,7 +86,6 @@ namespace mps
                 AdicionaProjetoSolution($"{pastaCamda}\\{nome}", nome);
             }
         }
-
 
         private static bool CriaPastaSolution(string pastaRaiz)
         {
@@ -118,7 +113,7 @@ namespace mps
             CriaEstruturaProjeto($"{caminho}\\{nome}", nome, template);
         }
 
-        private static void CriaEstruturaProjeto(string caminho, string projeto ,string template)
+        private static void CriaEstruturaProjeto(string caminho, string projeto, string template)
         {
             var estrtura = Templates.Estrutura(template);
             var matches = Regex.Matches(estrtura, "<Folder Include=\"([^\"]+)\"");
@@ -129,7 +124,7 @@ namespace mps
                 Directory.CreateDirectory(Path.Combine(caminho, folder));
             }
 
-           
+
             string csproj = estrtura
                     .Replace("MpsDefaultFramework", VersaoPadrao);
 
@@ -140,8 +135,7 @@ namespace mps
         {
             ComandosDotNet.AdicionaProjASolution(caminho, projeto, CaminhoPastaRaiz);
         }
-
-
+        
         private static void ExibeMensagemErro(string msg)
         {
             Console.ForegroundColor = ConsoleColor.Red;
